@@ -1,5 +1,6 @@
 <?= $this->extend('layout') ?>
 <?= $this->section('content') ?>
+
 <!-- Hero Section -->
     <section id="hero" class="hero section">
       <div class="container-fluid hero-container" data-aos="fade-up">
@@ -178,10 +179,7 @@
 
       </div>
 
-    </section><!-- /About Section -->
-    <section id="keranjang" class="keranjang section">
-                ini halaman keranjang
-  </section>            
+           
     <!-- Menu Section -->
     <section id="menu" class="menu section">
 

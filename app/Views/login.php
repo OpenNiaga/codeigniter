@@ -18,7 +18,11 @@ $password = [
           <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
-              
+             <a href="<?= base_url() ?>" class="logo d-flex align-items-center me-auto me-xl-0 text-decoration-none mb-4">
+                <i class="bi bi-fork-knife fs-3 text-warning me-2"></i>
+                <h1 class="sitename h4 text-light fw-bold m-0">NiceRestaurant</h1>
+              </a>
+
 
               <div class="card mb-3">
 
@@ -57,8 +61,9 @@ $password = [
                         <div class="invalid-feedback">Please enter your password!</div>
                     </div>
                     <div class="col-12">
-                        <?= form_submit('submit', 'Login', ['class' => 'btn btn-primary w-100']) ?>
+                        <?= form_submit('submit', 'Login', ['class' => 'btn btn-warning text-dark w-100']) ?>
                     </div>
+
 
             <?= form_close() ?>
 

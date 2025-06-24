@@ -10,17 +10,36 @@
     <!-- Nav Menu -->
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="#hero" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#keranjang"><i class="bi bi-cart-check"></i> Keranjang</a></li>
+         <li class="nav-item">
+            <a class="nav-link <?php echo (uri_string() == '') ? "" : "collapsed" ?>" href="/">
+                <span>Home</span>
+            </a>
+        </li>
+         <li class="nav-item">
+            <a class="nav-link <?php echo (uri_string() == 'about') ? "about" : "collapsed" ?>" href="#about">
+                <span>About</span>
+            </a>
+        </li>
+         <li class="nav-item">
+            <a class="nav-link <?php echo (uri_string() == '') ? "menu" : "collapsed" ?>" href="menu">
+                <span>Menu</span>
+            </a>
+        </li><!-- End Home Nav -->
 
         <?php if (session()->get('role') == 'admin') : ?>
-          <li><a href="#menu"><i class="bi bi-receipt"></i> Menu</a></li>
+          <li><a href="keranjang"><i></i>keranjang</a></li>
         <?php endif; ?>
 
-        <li><a href="#chefs">Chefs</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#contact">Contact</a></li>
+         <li class="nav-item">
+            <a class="nav-link <?php echo (uri_string() == '') ? "Chefs" : "collapsed" ?>" href="#chefs">
+                <span>Chefs</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link <?php echo (uri_string() == '') ? "Chefs" : "collapsed" ?>" href="#events">
+                <span>Events</span>
+            </a>
+        </li>
       </ul>
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
     </nav>
