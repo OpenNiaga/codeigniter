@@ -8,7 +8,15 @@ class UserSeeder extends Seeder
 {
     public function run()
     {
-        $faker = \Faker\Factory::create('id_ID');
+      $faker = \Faker\Factory::create('id_ID');
+
+      $this->db->table('user')->insert([
+        'username' => 'admin',
+        'email' => 'admin@example.com',
+        'password' => password_hash('admin'),
+        'role' => 'admin',
+        'created_at' => date('Y-m-d H:i:s'),
+      ]);
 
         for ($i = 0; $i < 10; $i++) {
             $data = [
@@ -18,7 +26,7 @@ class UserSeeder extends Seeder
                 'role' => $faker->randomElement(['admin', 'guest']),
                 'created_at' => date("Y-m-d H:i:s"),
             ];
-            //print_r($data);
+
             $this->db->table('user')->insert($data);
         }
     }
