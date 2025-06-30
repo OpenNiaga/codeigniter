@@ -14,9 +14,11 @@ $routes->get('logout', 'AuthController::logout');
 $routes->get('/menu', 'MenuController::index', ['filter' => 'auth']);
 $routes->get('/keranjang', 'TransaksiController::index', ['filter' => 'auth']);
 
-$routes->group('product', ['filter' => 'auth'], function($routes){
-  $routes->get('', 'ProductController::index');
-  $routes->post('', 'ProductController::create');
-  $routes->post('edit/(:any)', 'ProductController::edit/$1');
-  $routes->get('delete/(:any)', 'ProductController::delete/$1');
+$routes->group('product', function ($routes) {
+  $routes->get('/', 'ProductController::index');
+  $routes->get('create', 'ProductController::create');
+  $routes->post('store', 'ProductController::save');
+  $routes->get('edit/(:num)', 'ProductController::edit/$1');
+  $routes->post('update/(:num)', 'ProductController::update/$1');
+  $routes->post('delete/(:num)', 'ProductController::delete/$1');
 });

@@ -11,9 +11,9 @@ class UserSeeder extends Seeder
       $faker = \Faker\Factory::create('id_ID');
 
       $this->db->table('user')->insert([
-        'username' => 'admin',
+        'username' => 'admin123',
         'email' => 'admin@example.com',
-        'password' => password_hash('admin'),
+        'password' => password_hash('1234567', PASSWORD_DEFAULT),
         'role' => 'admin',
         'created_at' => date('Y-m-d H:i:s'),
       ]);
